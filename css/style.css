@@ -4,6 +4,11 @@ body {
 button{
     border-radius: 10px;
     cursor: pointer;
+    padding: 10px;
+}
+button:hover{
+    background-color: grey;
+    color: white;
 }
 .container{
     display: grid;
@@ -29,6 +34,7 @@ footer {
     padding-left: 100px;
     padding-right: 100px;
 }
+.resultadoTexto,
 .resultado{
     background-color: white;
     display: flex;
