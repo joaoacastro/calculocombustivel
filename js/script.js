@@ -19,10 +19,10 @@ function calcular(){
     }
 
     if (resultadoTemp < 0.7) {
-        resultado.innerHTML = "Abastecer com Etanol";
+        resultado.innerHTML = "Obrigado por usar nossa plataforma, baseado nos valores inseridos o melhor neste momento, é abastecer com Etanol";
         document.getElementById("refresh").disabled = false;
     } else {
-        resultado.innerHTML = "Abastecer com Gasolina";
+        resultado.innerHTML = "Obrigado por usar nossa plataforma, baseado nos valores inseridos o melhor neste momento, é abastecer com Gasolina";
         document.getElementById("refresh").disabled = false;
     }
 }
