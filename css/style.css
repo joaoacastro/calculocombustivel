@@ -1,0 +1,18 @@
+body {
+    font-family: 'Fredoka', sans-serif;
+}
+.container{
+    display: grid;
+    justify-content: center;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+}
+
+.main {
+    min-height: 100vh;
+    background-color: #DADFE8;
+    padding-top: 100px;
+}

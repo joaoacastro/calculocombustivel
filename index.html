@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.:|Cálculo de Combustível|:.</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>Cálculo de Combustível</h1>
+        
+            <input type="number" id="etanol" name="ValorEtanol" placeholder="R$" required>
+            <label for="valorEtanol">valor do Etanol</label>
+            <br>
+            <input type="number" id="gasolina" name="ValorGasolina" placeholder="R$" required>
+            <label for="valorGasolina">valor da Gasolina</label>
+            <br>
+            <br>
+            <button class="buttonCalculate" type="button" id="btnCalculate" onclick="calcular()">Calcular</button>
+            <br>
+            <button type="button" id="refresh" disabled="true">Denovo</button>
+            <br>
+            <br>
+            <div id="resultado"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p><em>Projeto em desenvolvimento Por Jonny Castro</em></p>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
+<!-- Em desenvolvimento por Jonny Castro -->
