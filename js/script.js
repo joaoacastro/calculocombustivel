@@ -6,6 +6,7 @@ var btn = document.querySelector("#refresh");
 function calcular(){
     let inputEtanol = document.getElementById("etanol");
     let inputGasolina = document.getElementById("gasolina");
+    let resultadoTexto = document.getElementById("resultadoTexto");
     let resultado = document.getElementById("resultado");
     
     etanol = inputEtanol.value.replace(",",".");
@@ -19,10 +20,18 @@ function calcular(){
     }
 
     if (resultadoTemp < 0.7) {
-        resultado.innerHTML = "Obrigado por usar nossa plataforma, baseado nos valores inseridos o melhor neste momento, é abastecer com Etanol";
+        resultadoTexto.innerHTML = "Obrigado por usar nossa plataforma, baseado nos valores inseridos o melhor neste momento, é abastecer com:";
+        resultado.innerHTML = "ETANOL";
+
+        resultadoTexto.style = "padding: 10px; border-radius: 10px";
+        resultado.style = "padding: 10px; border-radius: 10px";
         document.getElementById("refresh").disabled = false;
     } else {
-        resultado.innerHTML = "Obrigado por usar nossa plataforma, baseado nos valores inseridos o melhor neste momento, é abastecer com Gasolina";
+        resultadoTexto.innerHTML = "Obrigado por usar nossa plataforma, baseado nos valores inseridos o melhor neste momento, é abastecer com:";
+        resultado.innerHTML = "GASOLINA";
+
+        resultadoTexto.style = "padding: 10px; border-radius: 10px";
+        resultado.style = "padding: 10px; border-radius: 10px";
         document.getElementById("refresh").disabled = false;
     }
 }
