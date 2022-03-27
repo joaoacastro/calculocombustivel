@@ -15,7 +15,7 @@ function calcular(){
     let resultadoTemp = etanol/gasolina
 
     if (etanol <= 0 || gasolina <= 0){
-        alert("Por favor, preencher tanto o valor do Etanol quanto da Gasolina!")
+        alert("Ops, parece que faltou algo. \n Por favor, preencha tanto o valor do Etanol quanto da Gasolina!")
         location.reload();
     }
 
