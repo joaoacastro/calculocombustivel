@@ -7,6 +7,7 @@
     <title>.:|Cálculo de Combustível|:.</title>
 
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/responsivo.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,18 +15,19 @@
         <div class="container">
             <h1>Cálculo de Combustível</h1>
             <br>
-            <p>Com o atual preço do combustível elevado no Brasil, nada melhor do que ter uma opção mais em conta para abastecer nossos veículos, porém o barato as vezes não compensa, pois o etanol em certos momentos acaba gastando mais rápido que a gasolina.
-            <br>
-            <br>
-            Estou desenvolvendo esse projeto com o intuito de ajudar no momento do abastecimento, levando em consideração os valores inseridos nas lacunas, o código faz o cálculo e responde qual combustível deve ser utilizado.</p>
-            <br>
-            <br>
-            Por gentileza, coloque abaixo o valor do Etanol e o Valor da Gasolina e em seguida clique em Calcular.
-            <i>
-            <br>
-            (Obs.:Para Calcular novamente, por favor clique no botão Denovo)
-            </i>
-
+            <div class="texto">
+                <p>Com o atual preço do combustível elevado no Brasil, nada melhor do que ter uma opção mais em conta para abastecer nossos veículos, porém o barato as vezes não compensa, pois o etanol em certos momentos acaba gastando mais rápido que a gasolina.
+                <br>
+                <br>
+                Estou desenvolvendo esse projeto com o intuito de ajudar no momento do abastecimento, levando em consideração os valores inseridos nas lacunas, o código faz o cálculo e responde qual combustível deve ser utilizado.</p>
+                <br>
+                Por gentileza, coloque abaixo o valor do Etanol e o Valor da Gasolina e em seguida clique em Calcular.
+                <i>
+                <br>
+                (Obs.:Para Calcular novamente, por favor clique no botão Denovo)
+                </i>
+            </div>
+                
             <div class="combustiveis">
                 <div class="etanol">
                     <label for="valorEtanol"> Valor do Etanol: </label>
@@ -37,14 +39,13 @@
                     <input type="number" id="gasolina" name="ValorGasolina" placeholder="R$" required>
                 </div>
             </div>
+
+            <div id="resultado" class="resultado"></div>
             <br>
-            <br>
+
             <button class="buttonCalculate" type="button" id="btnCalculate" onclick="calcular()">Calcular</button>
             <br>
             <button type="button" id="refresh" disabled="true">Denovo</button>
-            <br>
-            <br>
-            <div id="resultado"></div>
         </div>
     </div>
 
