@@ -5,6 +5,16 @@ body {
     display: grid;
     justify-content: center;
 }
+.etanol,
+.gasolina{
+    display: flex;
+    justify-content: center;
+}
+.combustiveis{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+}
 footer {
     display: flex;
     justify-content: center;
@@ -14,5 +24,7 @@ footer {
 .main {
     min-height: 100vh;
     background-color: #DADFE8;
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-left: 300px;
+    padding-right: 300px;
 }
