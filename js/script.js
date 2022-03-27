@@ -1,62 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.:|Cálculo de Combustível|:.</title>
+var btn = document.querySelector("#refresh");
+    btn.addEventListener("click", () => {
+    location.reload();
+});
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/responsivo.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="main">
-        <div class="container">
-            <h1>Cálculo de Combustível</h1>
-            <br>
-            <div class="texto">
-                <p>Com o atual preço do combustível elevado no Brasil, nada melhor do que ter uma opção mais em conta para abastecer nossos veículos, porém o barato as vezes não compensa, pois o etanol em certos momentos acaba gastando mais rápido que a gasolina.
-                <br>
-                <br>
-                Estou desenvolvendo esse projeto com o intuito de ajudar no momento do abastecimento, levando em consideração os valores inseridos nas lacunas, o código faz o cálculo e responde qual combustível deve ser utilizado.</p>
-                <br>
-                Por gentileza, coloque abaixo o valor do Etanol e o Valor da Gasolina e em seguida clique em Calcular.
-                <i>
-                <br>
-                <br>
-                (Obs.:Para Calcular novamente, preencha os valores novamente e clique em CALCULAR, ou clique no botão ZERAR)
-                </i>
-            </div>
-                
-            <div class="combustiveis">
-                <div class="etanol">
-                    <label for="valorEtanol"> Valor do Etanol: </label>
-                    <input type="number" id="etanol" name="ValorEtanol" placeholder="R$" required>
-                </div>
-                <br>
-                <div class="gasolina">
-                    <label for="valorGasolina"> Valor da Gasolina: </label>
-                    <input type="number" id="gasolina" name="ValorGasolina" placeholder="R$" required>
-                </div>
-            </div>
-
-            <div id="resultadoTexto" class="resultadoTexto">
-            </div>
-            <div id="resultado" class="resultado"></div>
-            <br>
-
-            <button class="buttonCalculate" type="button" id="btnCalculate" onclick="calcular()">CALCULAR</button>
-            <br>
-            <button type="button" id="refresh" disabled="true">ZERAR</button>
-        </div>
-    </div>
-
-    <footer>
-        <p><em>Projeto em desenvolvimento Por Jonny Castro</em></p>
-    </footer>
+function calcular(){
+    let inputEtanol = document.getElementById("etanol");
+    let inputGasolina = document.getElementById("gasolina");
+    let resultadoTexto = document.getElementById("resultadoTexto");
+    let resultado = document.getElementById("resultado");
     
-    <script src="js/script.js"></script>
-</body>
-</html>
-<!-- Em desenvolvimento por Jonny Castro - fonte:https://www.noticiasautomotivas.com.br/alcool-gasolina-calculo/ -->
+    etanol = inputEtanol.value.replace(",",".");
+    gasolina = inputGasolina.value.replace(",",".");
+
+    let resultadoTemp = etanol/gasolina
+
+    if (etanol <= 0 || gasolina <= 0){
+        alert("Ops, parece que faltou algo. \n Por favor, preencha tanto o valor do Etanol quanto da Gasolina!")
+        location.reload();
+    }
+
+    if (resultadoTemp < 0.7) {
+        resultadoTexto.innerHTML = "Obrigado por usar nossa plataforma, baseado nos valores inseridos o melhor neste momento, é abastecer com:";
+        resultado.innerHTML = "ETANOL";
+
+        resultadoTexto.style = "padding: 10px; border-radius: 10px";
+        resultado.style = "padding: 10px; border-radius: 10px";
+        document.getElementById("refresh").disabled = false;
+    } else {
+        resultadoTexto.innerHTML = "Obrigado por usar nossa plataforma, baseado nos valores inseridos o melhor neste momento, é abastecer com:";
+        resultado.innerHTML = "GASOLINA";
+
+        resultadoTexto.style = "padding: 10px; border-radius: 10px";
+        resultado.style = "padding: 10px; border-radius: 10px";
+        document.getElementById("refresh").disabled = false;
+    }
+}
