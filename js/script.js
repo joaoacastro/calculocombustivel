@@ -4,13 +4,10 @@ var btn = document.querySelector("#refresh");
 });
 
 function calcular(){
-    let inputEtanol = document.getElementById("etanol");
-    let inputGasolina = document.getElementById("gasolina");
+    let etanol = document.getElementById("etanol").value.replace(",",".");
+    let gasolina = document.getElementById("gasolina").value.replace(",",".");
     let resultadoTexto = document.getElementById("resultadoTexto");
     let resultado = document.getElementById("resultado");
-    
-    etanol = inputEtanol.value.replace(",",".");
-    gasolina = inputGasolina.value.replace(",",".");
 
     let resultadoTemp = etanol/gasolina
 
