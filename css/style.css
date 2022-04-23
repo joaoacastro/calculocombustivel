@@ -30,6 +30,7 @@ button:hover{
 
 .inputEtanol,
 .inputGasolina{
+    padding-left: 5px;
     border-radius: 10px;
 }
 
