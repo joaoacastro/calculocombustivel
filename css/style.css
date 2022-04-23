@@ -1,22 +1,27 @@
 body {
     font-family: 'Fredoka', sans-serif;
 }
+
 button{
     border-radius: 10px;
     cursor: pointer;
     padding: 10px;
 }
+
 button:hover{
     background-color: grey;
     color: white;
 }
+
 .container{
     display: grid;
     justify-content: center;
 }
+
 .combustiveis{
     padding: 30px;
 }
+
 .etanol,
 .gasolina{
     display: flex;
@@ -25,7 +30,7 @@ button:hover{
 
 .inputEtanol,
 .inputGasolina{
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 footer {
