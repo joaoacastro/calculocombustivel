@@ -22,6 +22,12 @@ button:hover{
     display: flex;
     justify-content: center;
 }
+
+.inputEtanol,
+.inputGasolina{
+    margin-radius: 20px;
+}
+
 footer {
     display: flex;
     justify-content: center;
