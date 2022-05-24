@@ -1,7 +1,3 @@
-var btn = document.querySelector("#refresh");
-    btn.addEventListener("click", () => {
-    location.reload();
-});
 
 function calcular(){
     let etanol = document.getElementById("etanol").value.replace(",",".");
