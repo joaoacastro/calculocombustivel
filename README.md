@@ -16,6 +16,7 @@ Estou desenvolvendo esse projeto com o intuito de ajudar no momento do abastecim
 fonte:
 * https://www.noticiasautomotivas.com.br/alcool-gasolina-calculo/
 
+Thanks for visiting my project!
 <i>You can check out other projects I've developed here on my GitHub, or contact me through the other links.</i>
 <br>
 <a href = "mailto:joaoaccastro@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
