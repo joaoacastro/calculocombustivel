@@ -1,6 +1,5 @@
 # Cálculo Combustivel
 <br>
-<br>
 <img src="./src/print.png" width="400px">
 
 Com o atual preço do combustível elevado no Brasil, nada melhor do que ter uma opção mais em conta para abastecer nossos veículos, porém o barato as vezes não compensa, pois o etanol em certos momentos acaba gastando mais rápido que a gasolina.
