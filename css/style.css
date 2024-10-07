@@ -1,0 +1,64 @@
+body {
+    font-family: 'Fredoka', sans-serif;
+}
+
+button{
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: grey;
+    color: white;
+    transform: scale(.5);
+}
+
+.container{
+    display: grid;
+    justify-content: center;
+}
+
+.combustiveis{
+    padding: 30px;
+}
+
+.etanol,
+.gasolina{
+    display: flex;
+    justify-content: center;
+}
+
+.inputEtanol,
+.inputGasolina{
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+}
+
+label{
+    padding-right: 5px;
+}
+
+.main {
+    min-height: 100vh;
+    background-color: #DADFE8;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.resultadoTexto,
+.resultado{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.texto{
+    text-align: justify;
+}
