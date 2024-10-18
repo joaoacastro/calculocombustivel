@@ -1,7 +1,7 @@
 # Cálculo Combustível
 
 <div align="center">
-    <img src="./src/print.png" width="400px" alt="Cálculo Combustível">
+    <img src="src/thumb/print.png" width="400px" alt="Cálculo Combustível">
 </div>
 
 <div align="justify">
