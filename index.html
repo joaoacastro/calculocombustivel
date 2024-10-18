@@ -6,30 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>.:|Cálculo de Combustível|:.</title>
 
+    <!-- styles -->
     <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/responsivo.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
       <div class="container">
-        <h1>Cálculo de Combustível</h1>
+        <div class="title">
+          <a href="about.html">
+            <h2>Cálculo de Combustível</h2>
+          </a>
+        </div>
         <br />
         <div class="texto">
-          <br />
-          Por gentileza, coloque abaixo o valor do Etanol e o Valor da Gasolina
-          e em seguida clique em Calcular.
-          <i>
-            <br />
-            <br />
-            (Obs.:Para Calcular novamente, preencha os valores novamente e
-            clique em CALCULAR, ou clique no botão ZERAR)
+
+          <p>
+            Por gentileza, coloque abaixo o valor do Etanol e o Valor da
+            Gasolina e em seguida clique em Calcular.
+          </p>
+          <br>
+            <p>
+              (Obs.: Para Calcular novamente, preencha os valores novamente e
+              clique em CALCULAR, ou clique no botão ZERAR)
+            </p>
           </i>
         </div>
 
         <div class="combustiveis">
           <div class="etanol">
             <label for="valorEtanol"> Valor do Etanol: </label>
+
             <input
               type="number"
               id="etanol"
@@ -51,24 +66,36 @@
               required
             />
           </div>
+          <br />
+          <div class="gasolina">
+            <label for="valorGasolina"> Autonomia: </label>
+            <input
+              type="number"
+              id="autonomia"
+              class="inputAutonomia"
+              name="ValorAutonomia"
+              placeholder="Km/L"
+              required
+            />
+          </div>
         </div>
 
-        <div id="resultadoTexto" class="resultadoTexto"></div>
         <div id="resultado" class="resultado"></div>
         <br />
 
-        <button
-          class="buttonCalculate"
-          type="button"
-          id="btnCalculate"
-          onclick="calcular()"
-        >
-          CALCULAR
-        </button>
-        <br />
-        <button type="button" id="refresh" disabled="true">ZERAR</button>
-        <br />
-        <button onclick="window.location.href='about.html'">About me</button>
+        <div class="buttons">
+          <button
+            class="buttonCalculate"
+            type="button"
+            id="btnCalculate"
+            onclick="calcular()"
+          >
+            CALCULAR
+          </button>
+          <br />
+          <button type="button" id="refresh" disabled="true">ZERAR</button>
+          <br />
+        </div>
       </div>
     </main>
 

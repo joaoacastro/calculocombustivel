@@ -1,72 +1,133 @@
-body {
-    font-family: 'Fredoka', sans-serif;
+button {
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.5s;
+  border: 0px;
+  width: 300px;
 }
 
-button{
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 10px;
-    transition: 0.5s;
-    border: 0px;
-    width: 80vw;
+button:hover {
+  background-color: grey;
+  color: white;
+  border: 1px solid #000;
+}
+main {
+  display: grid;
+  justify-content: center;
 }
 
-button:hover{
-    background-color: grey;
-    color: white;
-    border: 1px solid #000;
+.title,
+.buttons {
+  display: flex;
+  justify-content: center;
 }
 
-.container{
-    display: grid;
-    justify-content: center;
+.buttons {
+  flex-direction: column;
+  align-items: center;
 }
 
-.combustiveis{
-    padding: 30px;
+.container {
+  width: 500px;
+  height: 97vh;
+  padding: 30px;
+  background: linear-gradient(
+    71deg,
+    rgba(34, 193, 195, 0.5) 0%,
+    rgba(101, 119, 224, 0.5) 50%,
+    rgba(167, 45, 253, 0.5) 100%
+  );
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+.combustiveis {
+  padding: 30px;
 }
 
 .etanol,
-.gasolina{
-    display: flex;
-    justify-content: center;
+.gasolina {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .inputEtanol,
-.inputGasolina{
-    padding-left: 5px;
-    border-radius: 10px;
+.inputGasolina,
+.inputAutonomia {
+  padding-left: 5px;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    font-style: italic;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
 }
 
-label{
-    padding-right: 5px;
+label {
+  padding-right: 5px;
 }
 
 main {
-    min-height: 96vh;
-    background-color: #DADFE8;
-    padding-top: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-.resultadoTexto,
-.resultado{
-    background-color: white;
-    display: flex;
-    justify-content: center;
-}
-.texto{
-    text-align: justify;
+  min-height: 96vh;
+  background-color: #dadfe8;
+  padding-top: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
-.botaoVoltar-aboutPage{
+.resultado {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.resultadoText{
+    background-color: #777676;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    font-size: 20px;
+}
+
+.texto {
+  text-align: justify;
+}
+
+.botaoVoltar-aboutPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 750px) {
+    body {
+        font-size: 12px;
+    }
+
+    .main {
+        padding-top: 50px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .container{
+        width: 360px;
+        height: 96vh;
+        padding: 10px;
+    }
+    .title{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
 }
