@@ -30,7 +30,7 @@ main {
 
 .container {
   width: 500px;
-  height: 97vh;
+  height: 100%;
   padding: 30px;
   background: linear-gradient(
     71deg,
