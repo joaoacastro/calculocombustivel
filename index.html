@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>.:|Cálculo de Combustível|:.</title>
+    <meta name="description" content="Calculador de combustível - Saiba qual combustível é mais econômico" />
+    <title>Cálculo de Combustível</title>
 
-    <link rel="shortcut icon" href="src/favicon/index/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="src/favicon/index/favicon.ico" type="image/x-icon" />
 
     <!-- styles -->
     <link rel="stylesheet" href="src/css/reset.css" />
@@ -28,85 +29,91 @@
             <h2>Cálculo de Combustível</h2>
           </a>
         </div>
-        <br />
-        <div class="texto">
 
+        <div class="texto">
           <p>
             Por gentileza, coloque abaixo o valor do Etanol e o Valor da
             Gasolina e em seguida clique em Calcular.
           </p>
-          <br>
-            <p>
-              (Obs.: Para Calcular novamente, preencha os valores novamente e
-              clique em CALCULAR, ou clique no botão ZERAR)
-            </p>
-          </i>
+          <p>
+            <small>(Obs.: Para Calcular novamente, preencha os valores novamente e
+            clique em CALCULAR, ou clique no botão ZERAR)</small>
+          </p>
         </div>
 
-        <div class="combustiveis">
-          <div class="etanol">
-            <label for="valorEtanol"> Valor do Etanol: </label>
-
+        <form class="combustiveis" id="formulario">
+          <div class="campo">
+            <label for="etanol">Valor do Etanol (R$):</label>
             <input
               type="number"
               id="etanol"
-              class="inputEtanol"
-              name="ValorEtanol"
-              placeholder="R$"
+              class="input"
+              step="0.01"
+              min="0"
+              placeholder="0.00"
               required
             />
+            <span class="erro" id="erroEtanol"></span>
           </div>
-          <br />
-          <div class="gasolina">
-            <label for="valorGasolina"> Valor da Gasolina: </label>
+
+          <div class="campo">
+            <label for="autonomiaEtanol">Autonomia Etanol (Km/L):</label>
+            <input
+              type="number"
+              id="autonomiaEtanol"
+              class="input"
+              step="0.1"
+              min="0"
+              placeholder="0.0"
+              required
+            />
+            <span class="erro" id="erroAutonomiaEtanol"></span>
+          </div>
+
+          <div class="campo">
+            <label for="gasolina">Valor da Gasolina (R$):</label>
             <input
               type="number"
               id="gasolina"
-              class="inputGasolina"
-              name="ValorGasolina"
-              placeholder="R$"
+              class="input"
+              step="0.01"
+              min="0"
+              placeholder="0.00"
               required
             />
+            <span class="erro" id="erroGasolina"></span>
           </div>
-          <br />
-          <div class="gasolina">
-            <label for="valorGasolina"> Autonomia: </label>
+
+          <div class="campo">
+            <label for="autonomiaGasolina">Autonomia Gasolina (Km/L):</label>
             <input
               type="number"
-              id="autonomia"
-              class="inputAutonomia"
-              name="ValorAutonomia"
-              placeholder="Km/L"
+              id="autonomiaGasolina"
+              class="input"
+              step="0.1"
+              min="0"
+              placeholder="0.0"
               required
             />
+            <span class="erro" id="erroAutonomiaGasolina"></span>
           </div>
-        </div>
+        </form>
 
         <div id="resultado" class="resultado"></div>
-        <br />
 
         <div class="buttons">
           <button
             class="buttonCalculate"
             type="button"
             id="btnCalculate"
-            onclick="calcular()"
           >
             CALCULAR
           </button>
-          <br />
-          <button type="button" id="refresh" disabled="true">ZERAR</button>
-          <br />
+          <button type="button" id="btnZerar" class="buttonZerar">ZERAR</button>
         </div>
       </div>
     </main>
 
-    <footer>
-      ...developed by
-      <a href="https://github.com/joaoacastro/calculocombustivel" target="_blank">.JAC.</a>
-    </footer>
-
     <script defer src="src/js/script.js"></script>
   </body>
 </html>
-<!-- Em desenvolvimento por Jonny Castro - fonte:https://www.noticiasautomotivas.com.br/alcool-gasolina-calculo/ -->

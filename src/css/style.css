@@ -1,36 +1,49 @@
+/* ===== ELEMENTOS BASE ===== */
 button {
   border-radius: 10px;
   cursor: pointer;
-  padding: 5px;
-  transition: 0.5s;
-  border: 0px;
-  width: 300px;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 button:hover {
-  background-color: grey;
+  background-color: #333;
   color: white;
-  border: 1px solid #000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ===== ESTRUTURA PRINCIPAL ===== */
 main {
+  flex-shrink: 0;
+  background-color: #dadfe8;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
   display: grid;
   justify-content: center;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.title,
-.buttons {
+.title {
   display: flex;
   justify-content: center;
-}
-
-.buttons {
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 20px;
 }
 
 .container {
-  width: 500px;
   height: 100%;
+  width: 100%;
+  max-width: 500px;
   padding: 30px;
   background: linear-gradient(
     71deg,
@@ -38,66 +51,393 @@ main {
     rgba(101, 119, 224, 0.5) 50%,
     rgba(167, 45, 253, 0.5) 100%
   );
-  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
 
+/* ===== TEXTO ===== */
+.texto {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.texto p {
+  margin-bottom: 10px;
+}
+
+/* ===== FORMULÁRIO E INPUTS ===== */
 .combustiveis {
-  padding: 30px;
-}
-
-.etanol,
-.gasolina {
+  padding: 20px 0;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  gap: 20px;
 }
 
-.inputEtanol,
-.inputGasolina,
-.inputAutonomia {
-  padding-left: 5px;
-  border-radius: 10px;
-  height: 50px;
+.campo {
   display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  font-style: italic;
+  flex-direction: column;
+  gap: 8px;
 }
 
 label {
-  padding-right: 5px;
+  font-weight: 600;
+  color: #000;
+  font-size: 16px;
 }
 
-main {
-  min-height: 96vh;
-  background-color: #dadfe8;
-  padding-top: 10px;
-  padding-left: 100px;
-  padding-right: 100px;
+.input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #fff;
 }
 
+.input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+  background-color: #fafafa;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+/* ===== MENSAGENS DE ERRO ===== */
+.erro {
+  color: #d32f2f;
+  font-size: 12px;
+  display: none;
+  font-weight: 500;
+}
+
+.erro.ativo {
+  display: block;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESULTADO ===== */
 .resultado {
-  background-color: white;
+  width: 100%;
+  max-width: 520px;
+  display: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.resultado.ativo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  padding: 18px;
+  margin: 20px 0 0;
+  background-color: #4caf50;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  font-size: 18px;
+  font-weight: 600;
+  animation: popIn 0.5s ease;
+  gap: 8px;
+  opacity: 1;
+  transform: scale(1);
+}
+.resultado.ativo strong {
+  font-size: 24px;
+  display: block;
+}
+
+.resultado.ativo small {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-top: 4px;
+}
+
+.resultado.ativo small:last-child {
+  font-size: 12px;
+  color: #ddf4d4;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8) rotateZ(-5deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1) rotateZ(0);
+    opacity: 1;
+  }
+}
+
+/* ===== BOTÕES ===== */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.buttonCalculate {
+  background-color: #4caf50;
+  color: white;
+  width: 100%;
+  max-width: 250px;
+}
+.buttonCalculate:hover {
+  background-color: #45a049;
+}
+
+.buttonZerar {
+  background-color: #ff9800;
+  color: white;
+  width: 100%;
+  max-width: 250px;
+}
+
+.buttonZerar:hover {
+  background-color: #e68900;
+}
+
+/* ===== FOOTER ===== */
+footer {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  font-style: italic;
+  margin-top: 40px;
+  color: #555;
+  font-size: 14px;
+  padding: 20px;
+  text-align: center;
 }
 
-.resultadoText{
-    background-color: #777676;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
+footer a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  margin-left: 5px;
+  word-break: break-word;
+}
+
+footer a:hover {
+  color: #45a049;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 15px;
+  }
+
+  footer a {
+    margin-left: 3px;
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    margin: 0 15px;
+    padding: 20px;
+  }
+
+  main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .combustiveis {
+    gap: 15px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .buttonCalculate,
+  .buttonZerar {
+    max-width: 100%;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  .input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .resultado.ativo {
+    font-size: 16px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+    min-height: 500px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  .input {
+    font-size: 14px;
     padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #000000;
-    font-size: 20px;
+  }
+
+  button {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .resultado.ativo {
+    font-size: 14px;
+    padding: 12px;
+    min-height: 50px;
+  }
+
+  .texto p {
+    font-size: 14px;
+  }
+}
+
+/* ===== PÁGINA ABOUT ===== */
+.about-content {
+  margin-top: 20px;
+}
+
+.about-content h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #000;
+}
+
+.about-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.about-section h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.about-section p {
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.about-section ul {
+  margin-left: 20px;
+  color: #555;
+}
+
+.about-section li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.about-section a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.about-section a:hover {
+  color: #45a049;
+  text-decoration: underline;
+}
+
+.about-section.cta {
+  text-align: center;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left-color: #4caf50;
+}
+
+.btn-voltar {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #4caf50;
+}
+
+.btn-voltar:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 15px;
+    border-left-width: 3px;
+  }
+
+  .about-section h3 {
+    font-size: 18px;
+  }
+
+  .about-section p,
+  .about-section ul {
+    font-size: 15px;
+  }
+
+  .btn-voltar {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
 }
 
 .texto {
@@ -122,7 +462,7 @@ main {
     }
     .container{
         width: 360px;
-        height: 96vh;
+        height: 100%;
         padding: 10px;
     }
     .title{

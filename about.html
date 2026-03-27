@@ -3,43 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>.:Sobre:.</title>
+    <meta name="description" content="Calculador de combustível - Saiba qual combustível é mais econômico" />
+    <title>Sobre - Cálculo de Combustível</title>
 
-    <link rel="shortcut icon" href="src/favicon/about/favicon.ico" type="image/x-icon">
-    <!-- styles -->
+    <link rel="shortcut icon" href="src/favicon/about/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="src/css/reset.css" />
     <link rel="stylesheet" href="src/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
       <div class="container">
-        <a href="https://www.linkedin.com/in/joao-ac-castro/" target="_blank">
-          <h1>About</h1>
-        </a>
-        <br />
-        <div class="texto">
-          <p>
-            Meu nome é João Antônio, sou Desenvolvedor Web com foco em Front-End, formado em Produção Audiovisual pelo Centro Universitário Senac.
-            <br />
-            <br />
-            Com os preços elevados dos combustíveis no Brasil, é importante encontrar opções mais econômicas para abastecer. No entanto, optar pelo mais barato nem sempre compensa, já que o etanol, em algumas situações, pode ser consumido mais rapidamente do que a gasolina.
-            <br />
-            <br />
-            Desenvolvi este projeto com o objetivo de facilitar a escolha no momento do abastecimento. Com base nos valores inseridos, o sistema calcula e indica qual combustível é a melhor opção.
-          </p>
+        <div class="title">
+          <a href="index.html">
+            <h2>← Voltar</h2>
+          </a>
         </div>
-        <br />
-        <br />
-        <div class="botaoVoltar-aboutPage">
-          <button onclick="window.location.href='index.html'">Voltar</button>
+
+        <div class="about-content">
+          <h2>Sobre Este Projeto</h2>
+
+          <div class="about-section">
+            <h3>Desenvolvedor</h3>
+            <p>
+              Meu nome é <strong>João Antônio</strong>, sou Desenvolvedor Web com foco em Front-End, formado em Produção Audiovisual pelo Centro Universitário Senac.
+            </p>
+            <p>
+              <a href="https://www.linkedin.com/in/joao-ac-castro/" target="_blank">
+                Visite meu LinkedIn
+              </a>
+            </p>
+          </div>
+
+          <div class="about-section">
+            <h3>Por que este projeto existe?</h3>
+            <p>
+              Com os preços elevados dos combustíveis no Brasil, é importante encontrar opções mais econômicas para abastecer nossos veículos. No entanto, optar pelo mais barato nem sempre compensa, já que o etanol, em algumas situações, pode ser consumido mais rapidamente do que a gasolina.
+            </p>
+            <p>
+              Desenvolvi este projeto com o objetivo de <strong>facilitar a escolha no momento do abastecimento</strong>. Com base nos valores inseridos, o sistema calcula e indica qual combustível é a melhor opção financeira.
+            </p>
+          </div>
+
+          <div class="about-section">
+            <h3>Como funciona?</h3>
+            <p>
+              O cálculo é simples e eficiente:
+            </p>
+            <ul>
+              <li>Você insere o valor do etanol</li>
+              <li>Você insere o valor da gasolina</li>
+              <li>Você insere a autonomia do seu veículo (Km/L)</li>
+              <li>O sistema calcula o custo por quilômetro de cada combustível</li>
+              <li>Informamos qual é a opção mais econômica e a porcentagem de economia</li>
+            </ul>
+          </div>
+
+          <div class="about-section cta">
+            <a href="index.html" class="btn-voltar">Usar Calculadora</a>
+          </div>
         </div>
       </div>
     </main>
-
-    <footer>
-      ...developed by
-      <a href="https://github.com/joaoacastro" target="_blank"> .JAC.</a>
-    </footer>
 
     <script defer src="src/js/script.js"></script>
   </body>
