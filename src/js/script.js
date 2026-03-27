@@ -4,23 +4,30 @@ const btnCalcular = document.getElementById("btnCalculate");
 const btnZerar = document.getElementById("btnZerar");
 const resultadoDiv = document.getElementById("resultado");
 const inputs = document.querySelectorAll(".input");
+const btnTheme = document.getElementById("btnTheme");
 
 // ===== INICIALIZAÇÃO =====
 document.addEventListener("DOMContentLoaded", () => {
   carregarDados();
   adicionarEventosBotoes();
   adicionarValidacaoTempo();
+  carregarTema();
 });
 
 // ===== CARREGAR DADOS DO LOCALSTORAGE =====
 function carregarDados() {
+  const formExiste = !!form;
+  if (!formExiste) {
+    return;
+  }
+
   const dados = localStorage.getItem("combustivelDados");
   if (dados) {
     const { etanol, gasolina, autonomiaEtanol, autonomiaGasolina } = JSON.parse(dados);
-    document.getElementById("etanol").value = etanol;
-    document.getElementById("gasolina").value = gasolina;
-    document.getElementById("autonomiaEtanol").value = autonomiaEtanol;
-    document.getElementById("autonomiaGasolina").value = autonomiaGasolina;
+    if (document.getElementById("etanol")) document.getElementById("etanol").value = etanol;
+    if (document.getElementById("gasolina")) document.getElementById("gasolina").value = gasolina;
+    if (document.getElementById("autonomiaEtanol")) document.getElementById("autonomiaEtanol").value = autonomiaEtanol;
+    if (document.getElementById("autonomiaGasolina")) document.getElementById("autonomiaGasolina").value = autonomiaGasolina;
     calcular(); // Recalcular com dados carregados
   }
 }
@@ -38,24 +45,63 @@ function salvarDados() {
 
 // ===== ADICIONAR EVENTOS AOS BOTÕES =====
 function adicionarEventosBotoes() {
-  btnCalcular.addEventListener("click", calcular);
-  btnZerar.addEventListener("click", zerar);
+  if (btnCalcular) {
+    btnCalcular.addEventListener("click", calcular);
+  }
+
+  if (btnZerar) {
+    btnZerar.addEventListener("click", zerar);
+  }
 
   // Enviar com ENTER no teclado (com formulário focado)
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    calcular();
-  });
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      calcular();
+    });
+  }
+
 
   // Permite enviar ao pressionar Enter em qualquer campo input
-  inputs.forEach((input) => {
-    input.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        calcular();
-      }
+  if (inputs && inputs.length > 0) {
+    inputs.forEach((input) => {
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          calcular();
+        }
+      });
     });
-  });
+  }
+
+  // Tema claro/escuro
+  if (btnTheme) {
+    btnTheme.addEventListener("click", alternarTema);
+  }
+}
+
+function carregarTema() {
+  const tema = localStorage.getItem("tema") || "claro";
+  if (tema === "escuro") {
+    document.body.classList.add("dark-theme");
+    if (btnTheme) btnTheme.textContent = "Claro";
+  } else {
+    document.body.classList.remove("dark-theme");
+    if (btnTheme) btnTheme.textContent = "Escuro";
+  }
+}
+
+function alternarTema() {
+  const temaAtual = document.body.classList.contains("dark-theme") ? "escuro" : "claro";
+  const novoTema = temaAtual === "escuro" ? "claro" : "escuro";
+  if (novoTema === "escuro") {
+    document.body.classList.add("dark-theme");
+    if (btnTheme) btnTheme.textContent = "Claro";
+  } else {
+    document.body.classList.remove("dark-theme");
+    if (btnTheme) btnTheme.textContent = "Escuro";
+  }
+  localStorage.setItem("tema", novoTema);
 }
 
 // ===== VALIDAÇÃO EM TEMPO REAL =====
